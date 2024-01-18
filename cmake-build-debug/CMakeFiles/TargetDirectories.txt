@@ -1,0 +1,3 @@
+/home/cjmatheka/Desktop/Software Engineering/Alx Africa/monty/cmake-build-debug/CMakeFiles/monty.dir
+/home/cjmatheka/Desktop/Software Engineering/Alx Africa/monty/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/cjmatheka/Desktop/Software Engineering/Alx Africa/monty/cmake-build-debug/CMakeFiles/rebuild_cache.dir
