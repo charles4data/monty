@@ -1,5 +1,15 @@
 /snap/clion/261/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/261/bin/ninja/linux/x64/ninja -G Ninja -S "/home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty" -B "/home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug"
--- Configuring done (0.0s)
-CMake Error: CMake can not determine linker language for target: monty
--- Generating done (0.0s)
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+CMake Error: Parse error in cache file /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeCache.txt on line 2. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeCache.txt on line 6. Offending entry: >>>>>>> dcf267b04aee4575ceb78583a3e0390074116694
+CMake Error: Parse error in cache file /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeCache.txt on line 82. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeCache.txt on line 86. Offending entry: >>>>>>> dcf267b04aee4575ceb78583a3e0390074116694
+CMake Error: Parse error in cache file /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeCache.txt on line 201. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeCache.txt on line 205. Offending entry: >>>>>>> dcf267b04aee4575ceb78583a3e0390074116694
+CMake Error: Parse error in cache file /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeCache.txt on line 211. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeCache.txt on line 215. Offending entry: >>>>>>> dcf267b04aee4575ceb78583a3e0390074116694
+CMake Error: Parse error in cache file /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeCache.txt on line 227. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeCache.txt on line 231. Offending entry: >>>>>>> dcf267b04aee4575ceb78583a3e0390074116694
+CMake Error: Parse error in cache file /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeCache.txt on line 288. Offending entry: <<<<<<< HEAD
+CMake Error: Parse error in cache file /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeCache.txt on line 292. Offending entry: >>>>>>> dcf267b04aee4575ceb78583a3e0390074116694
+CMake Error: The current CMakeCache.txt directory /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeCache.txt is different than the directory /home/cjmatheka/Desktop/Software Engineering/Alx Africa/monty/cmake-build-debug where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
+CMake Error: The source "/home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/CMakeLists.txt" does not match the source "/home/cjmatheka/Desktop/Software Engineering/Alx Africa/monty/CMakeLists.txt" used to generate cache.  Re-run cmake with a different source directory.

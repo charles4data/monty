@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Install script for directory: /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty
+=======
+# Install script for directory: /home/cjmatheka/Desktop/Software Engineering/Alx Africa/monty
+>>>>>>> dcf267b04aee4575ceb78583a3e0390074116694
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +54,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< HEAD
 file(WRITE "/home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "/home/cjmatheka/Desktop/Software Engineering/Alx Africa/monty/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> dcf267b04aee4575ceb78583a3e0390074116694
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

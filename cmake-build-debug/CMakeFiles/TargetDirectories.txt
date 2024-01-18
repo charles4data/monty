@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeFiles/monty.dir
 /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/cjmatheka/Desktop/Software Engineering/AlxAfricaSE/monty/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+=======
+/home/cjmatheka/Desktop/Software Engineering/Alx Africa/monty/cmake-build-debug/CMakeFiles/monty.dir
+/home/cjmatheka/Desktop/Software Engineering/Alx Africa/monty/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/cjmatheka/Desktop/Software Engineering/Alx Africa/monty/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+>>>>>>> dcf267b04aee4575ceb78583a3e0390074116694
