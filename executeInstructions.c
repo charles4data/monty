@@ -74,6 +74,10 @@ void executeInstructions(char *file_path)
             {
                 _sub(&stack);
             }
+            else if (strcmp(args[0], "nop") == 0)
+            {
+                _nop();
+            }
             else if (strcmp(args[0], "push") == 0)
             {
                     if (args[1] == NULL)

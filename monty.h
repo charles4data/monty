@@ -58,5 +58,6 @@ void _mul(stack_t **stack);
 void _swap(stack_t **stack);
 int _pop(stack_t **stack);
 void _sub(stack_t **stack);
+void _nop();
 
 #endif
