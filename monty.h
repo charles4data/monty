@@ -2,8 +2,14 @@
 #define MONTY_H
 
 /* Including c libraries */
+#define _GNU_SOURCE
 #include <stdio.h>
+#include <stddef.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdarg.h>
+#include <unistd.h>
 
 /* Defining data structures */
 /**
@@ -40,8 +46,9 @@ typedef struct instruction_s
 #define MAX_BUFFER_SIZE 1024;
 
 /* Function prototypes */
-void _push(stack_t *stack, int value);
-void _pall(stack_t *stack);
+void executeInstructions(char *file_path);
+void _push(stack_t **stack, int value, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
 
 
 

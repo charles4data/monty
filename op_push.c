@@ -3,17 +3,32 @@
 /**
  * _push - adds an element into a stack,
  * @value - value to push to stack,
+ * @line_number: line
+ * stack: stack to push
 */
 
-void _push(stack_t *stack, int value)
+void _push(stack_t **stack, int value, unsigned int line_number)
 {
-        stack->stack = malloc(stack->stack, (stack->size + 1) * sizeof(int));
+        stack_t *new_node;
+        (void)line_number;
 
-        if (stack->stack == NULL)
+        /* Create a new node */
+        new_node = malloc(sizeof(stack_t));
+        if (!new_node)
         {
-                perror("Memory allocation failed");
+                fprintf(stderr, "Error: malloc failed\n");
                 exit(EXIT_FAILURE);
         }
 
-        stack->stack[stack->size++] = value;
+        /* Set the value and links for the new node */
+        new_node->n = value;
+        new_node->prev = NULL;
+        new_node->next = *stack;
+
+        /* Update the previous node's link if the stack is not empty */
+        if (*stack)
+                (*stack)->prev = new_node;
+
+        /* Update the stack pointer */
+        *stack = new_node;
 }
