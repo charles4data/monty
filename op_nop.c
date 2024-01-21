@@ -6,5 +6,4 @@
 
 void _nop()
 {
-        pass;
 }
