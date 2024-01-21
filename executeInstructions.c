@@ -51,11 +51,16 @@ void executeInstructions(char *file_path)
                 {
                         if (strcmp(opcode, "push") == 0)
                         {
-                                if (arg == NULL || (!isdigit(*arg) && *arg != '-')){
+                                if (arg == NULL || (!isdigit(*arg) && *arg != '-'))
+                                {
                                         fprintf(stderr, "L%u: usage: push integer\n", line_number);
                                         exit(EXIT_FAILURE);
                                 }
                                 _push(&stack, atoi(arg), line_number);
+                        }
+                        else if (strcmp(opcode, "pall") == 0)
+                        {
+                                _pall(&stack, line_number);
                         }
                 }
         }
