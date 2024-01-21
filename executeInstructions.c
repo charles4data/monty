@@ -8,63 +8,93 @@
 
 void executeInstructions(char *file_path)
 {
-        char *line;
-        size_t len;
-        ssize_t read;
-        unsigned int line_number;
-        stack_t *stack;
-        char *opcode, *arg;
-        FILE *file;
+    char *args[5];
+    stack_t *stack;
+    char *line;
+    size_t len;
+    ssize_t read;
+    unsigned int line_number;
 
-        file = fopen(file_path, "r");
-        if (!file) {
-                fprintf(stderr, "Error: Can't open file %s\n", file_path);
-                exit(EXIT_FAILURE);
-        }
+    FILE *file = fopen(file_path, "r");
+    if (!file)
+    {
+        fprintf(stderr, "Error: Can't open file %s\n", file_path);
+        exit(EXIT_FAILURE);
+    }
 
-        /* Initialize the stack */
-        stack = NULL;
+    stack = NULL;
+    line = NULL;
+    len = 0;
+    line_number = 0;
 
-        /* Read and process the file line by line */
-        line = NULL;
-        len = 0;
-        line_number = 0;
+    while ((read = getline(&line, &len, file)) != -1)
+    {
+        line_number++;
 
-        while ((read = getline(&line, &len, file)) != -1)
+        /* Ignore empty lines */
+        if (read <= 1)
+            continue;
+
+        /* Remove newline character if present */
+        if (line[read - 1] == '\n')
+            line[read - 1] = '\0';
+
+        args[0] = strtok(line, " ");
+        args[1] = NULL;
+
+        /* Execute Monty instructions based on opcode */
+        if (args[0] != NULL)
         {
-                line_number++;
+            /* Match the opcode and call the corresponding function */
+            if (strcmp(args[0], "pint") == 0)
+            {
+                _pint(stack);
+            }
+            else if (strcmp(args[0], "add") == 0)
+            {
+                _add(&stack);
+            }
+            else if (strcmp(args[0], "mod") == 0)
+            {
+                _mod(&stack);
+            }
+            else if (strcmp(args[0], "mul") == 0)
+            {
+                _mul(&stack);
+            }
+            else if (strcmp(args[0], "swap") == 0)
+            {
+                _swap(&stack);
+            }
+            else if (strcmp(args[0], "pop") == 0)
+            {
+                _pop(&stack);
+            }
+            else if (strcmp(args[0], "sub") == 0)
+            {
+                _sub(&stack);
+            }
+            else if (strcmp(args[0], "push") == 0)
+            {
+                    if (args[1] == NULL)
+                    {
+                            fprintf(stderr, "L%d: push requires an argument\n", line_number);
+                            exit(EXIT_FAILURE);
+                    }
 
-                /* Ignore empty lines */
-                if (read <= 1)
-                        continue;
-
-                /* Process the line */
-                if (line[read - 1] == '\n')
-                        line[read - 1] = '\0';
-
-                /* Tokenize the line to get opcode and argument */
-                opcode = strtok(line, " ");
-                arg = strtok(NULL, " ");
-
-                /* Execute Monty instructions based on opcode */
-                if (opcode != NULL)
-                {
-                        if (strcmp(opcode, "push") == 0)
-                        {
-                                if (arg == NULL || (!isdigit(*arg) && *arg != '-'))
-                                {
-                                        fprintf(stderr, "L%u: usage: push integer\n", line_number);
-                                        exit(EXIT_FAILURE);
-                                }
-                                _push(&stack, atoi(arg), line_number);
-                        }
-                        else if (strcmp(opcode, "pall") == 0)
-                        {
-                                _pall(&stack, line_number);
-                        }
-                }
+                    _push(&stack, atoi(args[1]));
+            }
+            else if (strcmp(args[0], "pall") == 0)
+            {
+                _pall(stack);
+            }
+            else
+            {
+                fprintf(stderr, "L%d: invalid argument for opcode %s\n", line_number, args[0]);
+                exit(EXIT_FAILURE);
+            }
         }
-
-        free(line);
-        fclose(file);
+    }
+    free(line);
+    fclose(file);
 }

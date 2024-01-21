@@ -47,9 +47,16 @@ typedef struct instruction_s
 
 /* Function prototypes */
 void executeInstructions(char *file_path);
-void _push(stack_t **stack, int value, unsigned int line_number);
-void _pall(stack_t **stack, unsigned int line_number);
-
-
+instruction_t *get_opcode(char *opcode);
+int is_integer(const char *str);
+void _push(stack_t **stack, int value);
+void _pall(stack_t *stack);
+void _pint(stack_t *stack);
+void _add(stack_t **stack);
+void _mod(stack_t **stack);
+void _mul(stack_t **stack);
+void _swap(stack_t **stack);
+int _pop(stack_t **stack);
+void _sub(stack_t **stack);
 
 #endif

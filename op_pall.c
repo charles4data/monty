@@ -6,13 +6,13 @@
  * @line_number: line number
  */
 
-void _pall(stack_t **stack, unsigned int line_number)
+void _pall(stack_t *stack)
 {
-        stack_t *current = *stack;
-        (void)line_number;
-
-        while (current) {
-                printf("%d\n", current->n);
-                current = current->next;
+        printf("Stack elements: ");
+        while (stack != NULL)
+        {
+                printf("%d ", stack->n);
+                stack = stack->next;
         }
+        printf("\n");
 }
